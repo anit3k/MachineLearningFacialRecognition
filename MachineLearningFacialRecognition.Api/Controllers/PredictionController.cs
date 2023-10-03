@@ -1,4 +1,5 @@
 ﻿using MachineLearningFacialRecognition.Api.Models;
+using MachineLearningFacialRecognition.FaceRegService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MachineLearningFacialRecognition.Api.Controllers
@@ -11,7 +12,8 @@ namespace MachineLearningFacialRecognition.Api.Controllers
         [Route("upload")]
         public IActionResult Upload([FromBody] ImagePredictionDto dto)
         {
-
+            FacialRecognitionService service = new FacialRecognitionService();
+            service.Run();
             return Ok("Succes!");
         }
     }

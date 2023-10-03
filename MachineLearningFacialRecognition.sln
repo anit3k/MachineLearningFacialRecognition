@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearningFacialRecognition.Api", "MachineLearningFacialRecognition.Api\MachineLearningFacialRecognition.Api.csproj", "{B6234B1F-A614-4F97-8708-32534EAFD96F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MachineLearningFacialRecognition.Api", "MachineLearningFacialRecognition.Api\MachineLearningFacialRecognition.Api.csproj", "{B6234B1F-A614-4F97-8708-32534EAFD96F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearningFacialRecognition.FaceRegService", "MachineLearningFacialRecognition.FaceRegService\MachineLearningFacialRecognition.FaceRegService.csproj", "{3BC96F58-6F00-49CE-A18F-EBD4E4895B85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B6234B1F-A614-4F97-8708-32534EAFD96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6234B1F-A614-4F97-8708-32534EAFD96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6234B1F-A614-4F97-8708-32534EAFD96F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC96F58-6F00-49CE-A18F-EBD4E4895B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC96F58-6F00-49CE-A18F-EBD4E4895B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC96F58-6F00-49CE-A18F-EBD4E4895B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC96F58-6F00-49CE-A18F-EBD4E4895B85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
