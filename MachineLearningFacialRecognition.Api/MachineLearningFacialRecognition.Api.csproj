@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MachineLearningFacialRecognition.FaceRegService\MachineLearningFacialRecognition.FaceRegService.csproj" />
+    <ProjectReference Include="..\MachineLearningFacialRecognition.FileHandler\MachineLearningFacialRecognition.FileHandler.csproj" />
   </ItemGroup>
 
 </Project>

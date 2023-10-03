@@ -11,10 +11,11 @@ namespace MachineLearningFacialRecognition.FaceRegService
         static readonly string _imagesFolder = Path.Combine(_assetsPath, "images");
         static readonly string _trainTagsTsv = Path.Combine(_imagesFolder, "tags.tsv");
         static readonly string _testTagsTsv = Path.Combine(_imagesFolder, "test-tags.tsv");
-        static readonly string _predictSingleImage = Path.Combine(_imagesFolder, "mads6.jpg");
+        private string _predictSingleImage = "";
         static readonly string _inceptionTensorFlowModel = Path.Combine(_assetsPath, "inception", "tensorflow_inception_graph.pb");
-        public void Run()
+        public ImagePrediction Run(string imagePath)
         {
+            _predictSingleImage = imagePath;
             MLContext mlContext = new MLContext();
             // </SnippetCreateMLContext>
 
@@ -23,11 +24,11 @@ namespace MachineLearningFacialRecognition.FaceRegService
             // </SnippetCallGenerateModel>
 
             // <SnippetCallClassifySingleImage>
-            ClassifySingleImage(mlContext, model);
+            return ClassifySingleImage(mlContext, model);
         }
 
         // Build and train model
-        public static ITransformer GenerateModel(MLContext mlContext)
+        public ITransformer GenerateModel(MLContext mlContext)
         {
             // <SnippetImageTransforms>
             IEstimator<ITransformer> pipeline = mlContext.Transforms.LoadImages(outputColumnName: "input", imageFolder: _imagesFolder, inputColumnName: nameof(ImageData.ImagePath))
@@ -92,7 +93,7 @@ namespace MachineLearningFacialRecognition.FaceRegService
             // </SnippetReturnModel>
         }
 
-        public static void ClassifySingleImage(MLContext mlContext, ITransformer model)
+        public ImagePrediction ClassifySingleImage(MLContext mlContext, ITransformer model)
         {
             // load the fully qualified image file name into ImageData
             // <SnippetLoadImageData>
@@ -112,9 +113,11 @@ namespace MachineLearningFacialRecognition.FaceRegService
             // <SnippetDisplayPrediction>
             Console.WriteLine($"Image: {Path.GetFileName(imageData.ImagePath)} predicted as: {prediction.PredictedLabelValue} with score: {prediction.Score.Max()} ");
             // </SnippetDisplayPrediction>
+
+            return prediction;
         }
 
-        private static void DisplayResults(IEnumerable<ImagePrediction> imagePredictionData)
+        private void DisplayResults(IEnumerable<ImagePrediction> imagePredictionData)
         {
             // <SnippetDisplayPredictions>
             foreach (ImagePrediction prediction in imagePredictionData)
