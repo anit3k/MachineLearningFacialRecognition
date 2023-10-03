@@ -8,9 +8,9 @@ namespace MachineLearningFacialRecognition.FaceRegService
         static string dataFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         string _modelFolderpath = Path.Combine(dataFolder, "modeltrainer");
 
-        private string _imagesFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets//images");
-        private string _trainTagsTsv = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets//images//tags.tsv");
-        private string _inceptionTensorFlowModel = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets//inception//tensorflow_inception_graph.pb");
+        private string _imagesFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets\\images");
+        private string _trainTagsTsv = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets\\images\\tags.tsv");
+        private string _inceptionTensorFlowModel = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets\\inception\\tensorflow_inception_graph.pb");
         private readonly MLContext _mlContext;
 
         public Trainer(MLContext mLContext)
