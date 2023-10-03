@@ -1,6 +1,6 @@
 ﻿namespace MachineLearningFacialRecognition.FileHandler
 {
-    public class FileHandlerService
+    public class FileHandlerService : IFileHandlerService
     {
         private string _imagesFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets//images");
         public string SaveFile(string base64string)
