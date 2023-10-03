@@ -11,5 +11,13 @@
             File.WriteAllBytes(imagePath, imageBytes);
             return imagePath;
         }
+
+        public void DeleteImage(string fullpath)
+        {
+            if (File.Exists(fullpath))
+            {
+                File.Delete(fullpath);
+            }
+        }
     }
 }

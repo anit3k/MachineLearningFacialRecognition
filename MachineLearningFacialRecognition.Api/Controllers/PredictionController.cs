@@ -18,6 +18,7 @@ namespace MachineLearningFacialRecognition.Api.Controllers
             var imageToPredict = fileHandlerService.SaveFile(dto.Base64String);
             FacialRecognitionService service = new FacialRecognitionService();
             var result = service.Run(imageToPredict);
+            fileHandlerService.DeleteImage(imageToPredict);
             return Ok(JsonConvert.SerializeObject(result));
         }
     }
