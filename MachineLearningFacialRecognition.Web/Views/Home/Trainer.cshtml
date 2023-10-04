@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+@model FileUploadViewModel
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Files" class="control-label">Select Files:</label>
+        <input asp-for="Files" type="file" multiple class="form-control" />
+        <span asp-validation-for="Files" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Tag" class="control-label">Enter Text:</label>
+        <input asp-for="Tag" class="form-control" />
+        <span asp-validation-for="Tag" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+@if(Model.StatusMessage != string.Empty)
+{
+    <div>
+        <p>Status: @Model.StatusMessage</p>
+    </div>
+}
