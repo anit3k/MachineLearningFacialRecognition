@@ -22,14 +22,20 @@ namespace MachineLearningFacialRecognition.Web.Controllers
             _trainer = trainer;
         }
 
-        [HttpGet]
         public IActionResult Index()
+        {
+            return View();
+        }
+
+
+        [HttpGet]
+        public IActionResult Prediction()
         {
             return View(new ImageUploadViewModel());
         }
 
         [HttpPost]
-        public IActionResult Index(ImageUploadViewModel model)
+        public IActionResult Prediction(ImageUploadViewModel model)
         {
             var temp = ConvertIFormFileToBase64(model.Image);
 

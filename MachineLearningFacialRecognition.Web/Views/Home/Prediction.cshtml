@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Prediction";
+}
+
+@section styles {
+    <link rel="stylesheet" href="~/css/prediction.css" asp-append-version="true" />
+}
+
+@model ImageUploadViewModel
+
+<div class="container">
+    <div class="form-display">
+        <div class="form-input">
+            <form method="post" enctype="multipart/form-data" class="row row-cols-lg-auto g-3 align-items-center">
+                <div class="col-auto">
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Upload Image</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-result">
+            @if (Model.PredictionLabel != string.Empty)
+            {
+                <span>@Model.PredictionLabel.ToUpper()</span>
+                <span>@Model.PredictionPercentage</span>
+            }
+        </div>
+    </div>
+
+    <div class="navigation-bar">
+        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="index">Home</a>
+    </div>
+
+</div>
+

@@ -1,0 +1,63 @@
+﻿/* trainer.css */
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/Machine_Learning_Facial_Recognition_four.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.navigation-bar {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.00);
+    border: none;
+}
+
+a {
+    color: white !important;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.3s; /* Add a smooth transition effect on hover */
+    text-decoration: underline;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+    a:hover {
+        background-color: rgba(255, 255, 255, 0.75); /* Corrected rgba value for a semi-transparent background color */
+        color: #222 !important;
+    }
+
+span {
+    font-size: 1.25em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.form-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    display: flex;
+    justify-content: center;
+}
+
+.form-result {
+    margin-top: 2.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
