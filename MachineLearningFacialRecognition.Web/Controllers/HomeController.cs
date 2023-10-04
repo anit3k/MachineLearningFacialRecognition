@@ -30,15 +30,21 @@ namespace MachineLearningFacialRecognition.Web.Controllers
         }
         #endregion
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
         #region Prediction Page
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Prediction()
         {
             return View(new ImageUploadViewModel());
         }
 
         [HttpPost]
-        public IActionResult Index(ImageUploadViewModel model)
+        public IActionResult Prediction(ImageUploadViewModel model)
         {
             var result = PredictImage(model);            
             return View(AddResultToViewModel(model, result));

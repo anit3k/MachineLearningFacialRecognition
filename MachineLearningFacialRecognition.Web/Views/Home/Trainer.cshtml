@@ -2,25 +2,37 @@
     ViewData["Title"] = "Privacy Policy";
 }
 
+@section styles {
+    <link rel="stylesheet" href="~/css/trainer.css" asp-append-version="true" />
+}
+
+
 @model FileUploadViewModel
 
-<form method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label asp-for="Files" class="control-label">Select Files:</label>
-        <input asp-for="Files" type="file" multiple class="form-control" />
-        <span asp-validation-for="Files" class="text-danger"></span>
+<div class="container">
+    <div class="form-display">
+        <div class="form-input">
+            <form method="post" enctype="multipart/form-data" class="row row-cols-lg-auto g-3 align-items-center">
+                <div class="form-group">
+                    <input asp-for="Files" type="file" multiple class="form-control" />
+                    <span asp-validation-for="Files" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Tag" class="form-control" placeholder="Write a tag"/>
+                    <span asp-validation-for="Tag" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+        </div>
+        <div class="form-result">
+            @if (Model.StatusMessage != string.Empty)
+            {
+                <span>STATUS: @Model.StatusMessage</span>
+            }
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="Tag" class="control-label">Enter Text:</label>
-        <input asp-for="Tag" class="form-control" />
-        <span asp-validation-for="Tag" class="text-danger"></span>
+    <div class="navigation-bar">
+        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="index">Home</a>
     </div>
-    <button type="submit" class="btn btn-primary">Upload</button>
-</form>
 
-@if(Model.StatusMessage != string.Empty)
-{
-    <div>
-        <p>Status: @Model.StatusMessage</p>
-    </div>
-}
+</div>
