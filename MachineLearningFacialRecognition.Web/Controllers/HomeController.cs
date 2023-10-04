@@ -35,7 +35,6 @@ namespace MachineLearningFacialRecognition.Web.Controllers
             return View();
         }
 
-
         #region Prediction Page
         [HttpGet]
         public IActionResult Prediction()
