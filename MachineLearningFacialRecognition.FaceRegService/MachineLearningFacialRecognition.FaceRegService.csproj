@@ -14,6 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="assets\images\5ca1df9d-3eee-471a-910f-336314867f0f.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\images\78376f20-b0ba-49af-8249-f24040ea2e83.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="assets\images\mads.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
