@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MachineLearningFacialRecognition.Web.Models
 {
+    /// <summary>
+    /// This is the view model used in the prediction part of our website.
+    /// </summary>
     public class ImageUploadViewModel
     {
         [Required(ErrorMessage = "Please select an image.")]

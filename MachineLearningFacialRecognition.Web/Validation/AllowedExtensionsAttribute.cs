@@ -2,6 +2,9 @@
 
 namespace MachineLearningFacialRecognition.Web.Validation
 {
+    /// <summary>
+    /// This class is used validate the file extention types when uploading through our website
+    /// </summary>
     public class AllowedExtensionsAttribute : ValidationAttribute
     {
         private readonly string[] _extensions;
