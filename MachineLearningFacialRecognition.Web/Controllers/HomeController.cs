@@ -30,10 +30,12 @@ namespace MachineLearningFacialRecognition.Web.Controllers
         }
         #endregion
 
+        #region Home Page
         public IActionResult Index()
         {
             return View();
         }
+        #endregion
 
         #region Prediction Page
         [HttpGet]
@@ -45,6 +47,17 @@ namespace MachineLearningFacialRecognition.Web.Controllers
         [HttpPost]
         public IActionResult Prediction(ImageUploadViewModel model)
         {
+            if (model.Image == null)
+            {
+                ModelState.AddModelError(nameof(model.Image), "Please select a valid image.");
+                return View(model);
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             var result = PredictImage(model);            
             return View(AddResultToViewModel(model, result));
         }       
@@ -61,7 +74,12 @@ namespace MachineLearningFacialRecognition.Web.Controllers
         public IActionResult Trainer(FileUploadViewModel model)
         {
             try
-            {                
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(model);
+                }
+
                 AddImagesToTrainerModel(model);
                 _trainer.TrainModel();
                 model.StatusMessage = "Success!";
@@ -69,8 +87,7 @@ namespace MachineLearningFacialRecognition.Web.Controllers
             catch (Exception e)
             {
                 Console.WriteLine($"Error: {e.Message}");
-                model.StatusMessage = "Error occured";
-                throw;
+                model.StatusMessage = "Error occurred";
             }
             return View(model);
         }        

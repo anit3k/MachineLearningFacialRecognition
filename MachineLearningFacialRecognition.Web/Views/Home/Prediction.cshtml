@@ -13,7 +13,7 @@
         <div class="form-input">
             <form method="post" enctype="multipart/form-data" class="row row-cols-lg-auto g-3 align-items-center">
                 <div class="col-auto">
-                    <input asp-for="Image" class="form-control" />
+                    <input asp-for="Image" class="form-control" required/>
                     <span asp-validation-for="Image" class="text-danger"></span>
                 </div>
                 <div class="col-auto">
@@ -33,6 +33,5 @@
     <div class="navigation-bar">
         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="index">Home</a>
     </div>
-
 </div>
 
