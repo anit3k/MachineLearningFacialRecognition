@@ -8,7 +8,7 @@ namespace MachineLearningFacialRecognition.Web.Models
     public class FileUploadViewModel
     {
         [Required(ErrorMessage = "Please select at least one file.")]
-        public List<IFormFile> Files { get; set; }
+        public List<IFormFile> Files { get; set; } =  new List<IFormFile> { };
 
         [Required(ErrorMessage = "Please enter text.")]
         public string Tag { get; set; }
