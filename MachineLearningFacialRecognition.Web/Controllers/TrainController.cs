@@ -38,5 +38,13 @@ namespace MachineLearningFacialRecognition.Web.Controllers
             }
             return Ok("Succes!");
         }
+
+        [HttpGet]
+        [Route("train")]
+        public IActionResult Train()
+        {
+            _trainer.TrainModel();
+            return Ok("Trained the model, you have!");
+        }
     }
 }
